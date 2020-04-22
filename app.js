@@ -5,6 +5,11 @@ let cookieParser = require('cookie-parser')
 let logger = require('morgan')
 let helmet = require('helmet')
 
+// モデルの読み込み
+let Category = require('./models/category')
+let Post = require('./models/post')
+let Comment = require('./models/comment')
+
 let indexRouter = require('./routes/index')
 let usersRouter = require('./routes/users')
 
