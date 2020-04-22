@@ -1,0 +1,95 @@
+.article {
+  margin-top: 10px; }
+  .article__head {
+    position: relative;
+    height: 45vh; }
+    .article__head img {
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+    .article__head .info {
+      padding: 0 20px;
+      position: absolute;
+      bottom: 40px;
+      color: #fff;
+      letter-spacing: 0.05em;
+      text-shadow: 1px 1px 5px #555; }
+      .article__head .info__title {
+        margin: 0;
+        font-size: 20px; }
+      .article__head .info__date {
+        text-align: right; }
+  .article__main {
+    border-radius: 20px;
+    margin-top: -30px;
+    padding: 20px;
+    background-color: #fff; }
+    .article__main__content {
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      line-height: 1.8; }
+    .article__main__link a {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #32282e;
+      border-radius: 3px;
+      text-decoration: none;
+      height: 44px; }
+    .article__main .comment-list .comment-item .comment-score {
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-end;
+      overflow: hidden; }
+      .article__main .comment-list .comment-item .comment-score__btn {
+        float: left;
+        display: flex;
+        align-items: center;
+        overflow: hidden; }
+        .article__main .comment-list .comment-item .comment-score__btn button {
+          float: left;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 36px;
+          height: 36px;
+          border: 1px solid #999;
+          border-radius: 50%;
+          background-color: #fff;
+          outline: none;
+          transition: 0.4s; }
+          .article__main .comment-list .comment-item .comment-score__btn button:disabled {
+            border: 1px solid #fff;
+            color: #fff; }
+        .article__main .comment-list .comment-item .comment-score__btn__count {
+          margin: 0 10px;
+          float: left; }
+        .article__main .comment-list .comment-item .comment-score__btn--good:disabled {
+          background-color: #00c853; }
+        .article__main .comment-list .comment-item .comment-score__btn--bad:disabled {
+          background-color: #ff8181; }
+    .article__main .comment-list .comment-item + .comment-item {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #32282e; }
+    .article__main .comment-list--no {
+      text-align: center; }
+    .article__main .form .message {
+      margin: 20px 0;
+      padding: 10px;
+      width: 100%;
+      max-width: 100%;
+      min-height: 80px;
+      border: 1px solid #32282e;
+      border-radius: 3px; }
+    .article__main .form .submit {
+      width: 100%;
+      height: 44px;
+      border: 1px solid #32282e;
+      border-radius: 3px;
+      background-color: #fff; }
+
+/*# sourceMappingURL=detail.css.map */

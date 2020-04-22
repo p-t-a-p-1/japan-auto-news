@@ -1,0 +1,152 @@
+// pupular news list
+.popular {
+  margin-top: 10px;
+  &__title {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.05em;
+    margin: 0 20px 5px;
+  }
+}
+
+// slider module
+.popular-slider {
+  .slick-slide {
+    margin: 0 5px;
+  }
+  &__item {
+    .slider-link {
+      display: block;
+      position: relative;
+      &__title {
+        position: absolute;
+        width: 90%;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        color: #fff;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        line-height: 1.8;
+        text-shadow: 1px 1px 5px #555;
+      }
+      &__img {
+        border-radius: 20px;
+        object-fit: cover;
+        height: 45vw;
+        max-height: 200px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+// latest news list
+.latest {
+  margin: 20px;
+  &__title {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.05em;
+    margin: 0 20px 5px;
+  }
+}
+
+// media module
+.media {
+  padding: 5px 0;
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 75px;
+  }
+  &__info {
+    width: 75%;
+  }
+  &__title {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  &__description {
+    display: none;
+  }
+  &__img {
+    width: 20%;
+    img {
+      width: 100%;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+  & + .media {
+    border-top: 1px solid #999;
+  }
+}
+
+// タブレット縦, スマートフォン横
+@media screen and (min-width: 481px) {
+  .media {
+    &__info {
+      width: 70%;
+    }
+    &__img {
+      width: 25%;
+      img {
+        height: 70px;
+      }
+    }
+  }
+}
+
+// デスクトップ, タブレット横
+@media screen and (min-width: 769px) {
+  .popular {
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 20px;
+    &__title {
+      font-size: 2em;
+    }
+  }
+  .latest {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+    &__title {
+      font-size: 2em;
+    }
+  }
+  .latest-list {
+    margin: 0 20px;
+  }
+  .media {
+    padding: 20px 0;
+    &__link {
+      align-items: unset;
+      min-height: 100px;
+    }
+    &__info {
+      width: 65%;
+    }
+    &__title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    &__description {
+      display: block;
+    }
+    &__img {
+      width: 30%;
+      display: flex;
+      align-items: center;
+      img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+    }
+  }
+}

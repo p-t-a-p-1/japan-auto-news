@@ -1,0 +1,96 @@
+body {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN',
+    'Hiragino Sans', Meiryo, sans-serif;
+  word-break: break-all;
+}
+
+a {
+  color: #32282e;
+  text-decoration: none;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+// header
+.header {
+  .header-logo {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    margin: 15px auto;
+    letter-spacing: 0.05em;
+    font-size: 7vw;
+    &__link {
+    }
+  }
+}
+
+// header nav
+.nav {
+  position: relative;
+}
+.nav-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.nav-list {
+  max-width: 1000px;
+  min-width: 800px;
+  height: 50px;
+  line-height: 40px;
+  margin: 0 20px;
+  .nav-item {
+    float: left;
+    width: 110px;
+    text-align: center;
+    &__link {
+      display: block;
+      &--active {
+        border-bottom: 1px solid #555;
+      }
+    }
+  }
+}
+
+// footer copyright
+.copyright {
+  margin: 10px 0;
+  text-align: center;
+  small {
+    font-size: 15px;
+  }
+}
+
+// タブレット縦, スマートフォン横
+@media screen and (min-width: 481px) {
+}
+
+// デスクトップ, タブレット横
+@media screen and (min-width: 769px) {
+  .nav-list {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .header {
+    .header-logo {
+      font-size: 50px;
+    }
+  }
+}

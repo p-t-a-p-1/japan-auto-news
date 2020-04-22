@@ -1,0 +1,58 @@
+body {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  word-break: break-all; }
+
+a {
+  color: #32282e;
+  text-decoration: none; }
+  a:hover {
+    opacity: 0.7; }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0; }
+
+.header .header-logo {
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  margin: 15px auto;
+  letter-spacing: 0.05em;
+  font-size: 7vw; }
+
+.nav {
+  position: relative; }
+  .nav .nav-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; }
+    .nav .nav-wrap .nav-list {
+      max-width: 1000px;
+      min-width: 800px;
+      height: 50px;
+      line-height: 40px;
+      margin: 0 20px; }
+      .nav .nav-wrap .nav-list .nav-item {
+        float: left;
+        width: 110px;
+        text-align: center; }
+        .nav .nav-wrap .nav-list .nav-item__link {
+          display: block; }
+          .nav .nav-wrap .nav-list .nav-item__link--active {
+            border-bottom: 1px solid #555; }
+
+.copyright {
+  margin: 10px 0;
+  text-align: center; }
+  .copyright small {
+    font-size: 15px; }
+
+/*# sourceMappingURL=common.css.map */
