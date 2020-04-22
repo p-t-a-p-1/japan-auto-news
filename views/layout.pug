@@ -2,6 +2,43 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(name="description", content=description)
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(property="og:title" content=title)
+    meta(property="og:type" content=ogType)
+    meta(property="og:url" content=currentUrl)
+    meta(property="og:image" content=ogImageUrl)
+    meta(property="og:site_name" content="国内の最新ニュース｜JAPAN-TODAY-NEWS")
+    meta(property="og:description" content=description)
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Oswald&display=swap")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css", integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv",crossorigin="anonymous")
   body
-    block content
+    header.header
+      h1.header-logo
+        a(href="/").logo JAPAN-TODAY-NEWS
+    //- header
+
+    main
+      nav.nav
+        div.nav-wrap
+          ul.nav-list
+            li.nav-item
+              a(href="/category/general/").nav-item__link 一般
+            li.nav-item
+              a(href="/category/entertainment/").nav-item__link エンタメ
+            li.nav-item
+              a(href="/category/health/").nav-item__link 健康
+            li.nav-item
+              a(href="/category/sports/").nav-item__link スポーツ
+      //- category navigation
+      block content
+    //- main
+
+    footer
+      div.copyright
+        small © 2020 JAPAN-TODAY-NEWS
+    //- footer
+
+    script(src="/javascripts/bundle.js")

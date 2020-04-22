@@ -1,5 +1,31 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+  - var hasPopulatePosts = populatePosts.length >= 1
+  if hasPopulatePosts
+    aside.popular
+      h2.popular__title Trending
+      div.popular-slider
+        each post in populatePosts
+          - var postLink = '/post/' + post.id
+          div.popular-slider__item
+            a(href=postLink).slider-link
+              p.slider-link__title #{post.title}
+              img(src=post.thumbImg width="100%" alt=post.title).slider-link__img
+  //- popular news list
+
+  - var hasPosts = posts.length >= 1
+  if hasPosts
+    div.latest
+      h2.latest__title Latest
+      ul.latest-list
+        each post in posts
+          - var postLink = '/post/' + post.id
+          li.latest-list__item.media
+            a(href=postLink).media__link
+              div.media__info
+                h3.media__title #{post.title}
+                p.media__description #{post.content}
+              div.media__img
+                img(src=post.thumbImg width="100%" alt=post.title)
