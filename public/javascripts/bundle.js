@@ -115,6 +115,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+/**
+ * 一覧の人気記事のスライダー
+ */
+
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('.popular-slider').slick({
   dots: false,
   arrows: false,
@@ -123,16 +127,16 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.popular-slider').slick({
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 3,
-  responsive: [{
+  responsive: [// 480〜599px
+  {
     breakpoint: 600,
-    // 480〜599px
     settings: {
       slidesToShow: 2,
       slidesToScroll: 2
     }
-  }, {
+  }, // 〜479px
+  {
     breakpoint: 480,
-    // 〜479px
     settings: {
       slidesToShow: 1,
       slidesToScroll: 1
@@ -152,10 +156,17 @@ String.prototype.toUnicode = function () {
 
   return result;
 };
+/**
+ * 本文をunicodeに変換して文字化けをしていないか判定
+ */
+// 文字化けしている文字コード
+
 
 var replacementCharacter = "\\ufffd";
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('.media__description, .article__main__content').each(function (i, e) {
-  var articleText = jquery__WEBPACK_IMPORTED_MODULE_0___default()(e);
+  // 一覧の各記事の詳細文、詳細の本文を取得し文字化けしていないか判定
+  var articleText = jquery__WEBPACK_IMPORTED_MODULE_0___default()(e); // unicodeに変換
+
   var unicodeText = articleText.text().toUnicode();
 
   for (var char = 0; char <= 5; char++) {
@@ -166,6 +177,10 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.media__description, .article__ma
     }
   }
 });
+/**
+ * Goodボタン
+ */
+
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('.comment-score__btn--good').each(function (i, e) {
   var button = jquery__WEBPACK_IMPORTED_MODULE_0___default()(e);
   button.click(function () {
@@ -185,6 +200,10 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.comment-score__btn--good').each(
     });
   });
 });
+/**
+ * Badボタン
+ */
+
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('.comment-score__btn--bad').each(function (i, e) {
   var button = jquery__WEBPACK_IMPORTED_MODULE_0___default()(e);
   button.click(function () {
@@ -203,7 +222,11 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.comment-score__btn--bad').each(f
       button.find('i').removeClass('far').addClass('fas');
     });
   });
-}); // URLから現在の絞り込み
+});
+/**
+ * グローバルナビの現在リンク判定
+ */
+// URLから現在の絞り込み
 
 var currentURL = location.pathname;
 
@@ -221,9 +244,13 @@ if (currentURL.match(/category/)) {
     }
   });
 }
+/**
+ * 詳細ページの日付の0埋め
+ */
+
 
 if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('.article__head__info .info__date').length > 0) {
-  // 詳細の日付の0埋め
+  // 詳細の日付取得
   var dateText = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.article__head__info .info__date').text(); // 年 - 月 - 日
 
   var dateArr = dateText.split('-'); // 月の0埋め
