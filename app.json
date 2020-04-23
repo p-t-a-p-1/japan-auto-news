@@ -1,0 +1,7 @@
+{
+  "name": "japan-auto-news",
+  "description": "日本の最新ニュースを自動取得",
+  "logo": "",
+  "keywords": ["node"],
+  "image": "heroku/nodejs"
+}
