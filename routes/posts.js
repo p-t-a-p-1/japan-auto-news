@@ -26,7 +26,11 @@ router.get('/:postId', csrfProtection, (req, res, next) => {
 
   // 記事情報保存
   let storedPost = null
-  Posts.findByPk(postId)
+  Posts.findOne({
+    where: {
+      id: postId,
+    },
+  })
     .then((post) => {
       // 記事IDから紐付くコメント取得
       post.createdAt = post.createdAt.toDateString()
@@ -116,7 +120,11 @@ router.post('/:postId/comment/:commentId/good', (req, res, next) => {
   }
   goodCount = parseInt(goodCount)
 
-  Comments.findByPk(commentId).then((comment) => {
+  Comments.findOne({
+    where: {
+      id: commentId,
+    },
+  }).then((comment) => {
     if (comment.goodCount === goodCount) {
       /**
        * DBにあるいいねカウントの数とAPIで叩かれたクエリのいいねカウントが
@@ -159,7 +167,11 @@ router.post('/:postId/comment/:commentId/bad', (req, res, next) => {
   }
   badCount = parseInt(badCount)
 
-  Comments.findByPk(commentId).then((comment) => {
+  Comments.findOne({
+    where: {
+      id: commentId,
+    },
+  }).then((comment) => {
     if (comment.badCount === badCount) {
       /**
        * DBにあるいいねカウントの数とAPIで叩かれたクエリのいいねカウントが
