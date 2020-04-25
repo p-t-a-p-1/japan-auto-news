@@ -3,7 +3,10 @@ extends layout
 block content
   article.article
     div.article__head
-      img(src=post.thumbImg alt=post.title)
+      if post.thumbImg !== null 
+        img(src=post.thumbImg width="100%" alt=post.title)
+      else
+        img(src='/images/noimage.png' width="100%" alt=post.title)
       div.article__head__info.info
         h1.info__title #{post.title}
         p.info__author #{post.author}

@@ -12,7 +12,10 @@ block content
           div.popular-slider__item
             a(href=postLink).slider-link
               p.slider-link__title #{post.title}
-              img(src=post.thumbImg width="100%" alt=post.title).slider-link__img
+              if post.thumbImg !== null 
+                img(src=post.thumbImg width="100%" alt=post.title).slider-link__img
+              else
+                img(src='/images/noimage.png' width="100%" alt=post.title).slider-link__img
   //- popular news list
 
   - var hasPosts = posts.length >= 1
@@ -28,4 +31,9 @@ block content
                 h3.media__title #{post.title}
                 p.media__description #{post.content}
               div.media__img
-                img(src=post.thumbImg width="100%" alt=post.title)
+                if post.thumbImg !== null 
+                  img(src=post.thumbImg width="100%" alt=post.title)
+                else
+                  img(src='/images/noimage.png' width="100%" alt=post.title)
+                
+                
