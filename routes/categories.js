@@ -53,7 +53,10 @@ router.get('/:categorySlug', (req, res, next) => {
     .then((posts) => {
       res.render('index', {
         title: storedCategory.name + 'に関するニュース｜JAPAN-TODAY-NEWS',
-        description: '最新ニュース一覧です',
+        description:
+          'ニュースまとめサイト「JAPAN-TODAY-NEWS」。' +
+          storedCategory.name +
+          'に関する最新のニュースです。',
         currentUrl: req.protocol + '://' + req.headers.host + req.originalUrl,
         ogType: 'article',
         ogImageUrl: req.protocol + '://' + req.headers.host + '/ogp.png',

@@ -22,7 +22,8 @@ router.get('/', function (req, res, next) {
     .then((posts) => {
       res.render('index', {
         title: 'ニュース一覧｜国内最新ニュース',
-        description: '最新ニュース一覧です',
+        description:
+          'ニュースまとめサイト「JAPAN-TODAY-NEWS」。一般、エンタメ、健康、スポーツに関する最新のニュースを1日1回追加します。',
         currentUrl: req.protocol + '://' + req.headers.host + req.originalUrl,
         ogType: 'website',
         ogImageUrl: req.protocol + '://' + req.headers.host + '/ogp.png',
