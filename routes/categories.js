@@ -12,9 +12,8 @@ router.get('/', (req, res, next) => {
   res.redirect('../')
 })
 
-// カテゴリ名でニュース取得
+// カテゴリ指定のURLでgetされた場合はカテゴリに関するニュース取得
 router.get('/:categorySlug', (req, res, next) => {
-  console.log(req.params.categorySlug)
   // URL内のcategory名取得
   const categorySlug = req.params.categorySlug
   if (!categorySlug.match(/^[A-Za-z0-9]+$/)) {
@@ -24,77 +23,62 @@ router.get('/:categorySlug', (req, res, next) => {
 
   let storedCategory = null
   let populatePosts = null
+
+  // リクエストできたURLパラメータからカテゴリ情報を取得
   Categories.findOne({
     where: {
       slug: categorySlug,
     },
   })
     .then((category) => {
+      /**
+       * カテゴリ情報取得後、そのカテゴリに関する記事をPostsテーブルから取得する
+       */
       storedCategory = category
-      // PV数から人気の記事取得
+
+      // PV数から人気の記事3件取得
       return Posts.findAll({
         where: {
-          categoryId: category.id,
+          categoryId: category.id, // カテゴリのId
         },
-        limit: 3,
-        order: [['pv', 'DESC']],
+        limit: 3, // 記事数
+        order: [['pv', 'DESC']], // PV数が多い順から
       })
     })
     .then((posts) => {
+      // 人気記事情報を格納
       populatePosts = posts
+
+      // 新着記事5件取得
       return Posts.findAll({
         where: {
-          categoryId: storedCategory.id,
+          categoryId: storedCategory.id, // カテゴリのId
         },
-        limit: 3,
-        order: [['updatedAt', 'DESC']],
+        limit: 5, // 記事数
+        order: [['updatedAt', 'DESC']], // 日付の降順
       })
     })
     .then((posts) => {
+      /**
+       * 記事取得後、index.pugにデータ渡す
+       */
       res.render('index', {
-        title: storedCategory.name + 'に関するニュース｜JAPAN-TODAY-NEWS',
+        title: storedCategory.name + 'に関するニュース｜JAPAN-TODAY-NEWS', // ページtitle
         description:
           'ニュースまとめサイト「JAPAN-TODAY-NEWS」。' +
           storedCategory.name +
-          'に関する最新のニュースです。',
-        currentUrl: req.protocol + '://' + req.headers.host + req.originalUrl,
-        ogType: 'article',
-        ogImageUrl: req.protocol + '://' + req.headers.host + '/ogp.png',
-        populatePosts: populatePosts,
-        posts: posts,
+          'に関する最新のニュースです。', // ページdescription
+        currentUrl: req.protocol + '://' + req.headers.host + req.originalUrl, // 現在のURL
+        ogType: 'article', // og定義で使用
+        ogImageUrl: req.protocol + '://' + req.headers.host + '/ogp.png', // og画像
+        populatePosts: populatePosts, // 人気記事情報
+        posts: posts, // 新着記事情報
       })
     })
     .catch((error) => {
       console.log('ERROR処理')
       console.error(error)
     })
-  // Posts.findAll({
-  //   where: {
-  //     categoryId:
-  //   }
-  // }).then(posts => {
-  //   console.log(posts)
-  //   res.render('index', {
-  //     title: 'ニュース一覧',
-  //     posts
-  //   })
-  // })
-
-  // const NEWS_API_KEY = process.env.NEWS_API_KEY
-  // const newsapi = new NewsAPI(NEWS_API_KEY)
-  // let newsArr = []
-  // newsapi.v2
-  //   .topHeadlines({
-  //     category: categoryName,
-  //     country: 'jp',
-  //     pageSize: '3'
-  //   })
-  //   .then(news => {
-  //     news['articles'].forEach(item => {
-  //       // ニュースごとの処理
-  //       console.log(item.title)
-  //     })
-  //   })
 })
 
 module.exports = router
