@@ -50,8 +50,8 @@ h6 {
   -webkit-overflow-scrolling: touch;
 }
 .nav-list {
-  max-width: 1000px;
-  min-width: 800px;
+  display: flex;
+  justify-content: center;
   height: 50px;
   line-height: 40px;
   margin: 0 20px;
