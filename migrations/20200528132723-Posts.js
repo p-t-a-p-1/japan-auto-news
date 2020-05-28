@@ -9,26 +9,37 @@ module.exports = {
       Example:
       return queryInterface.createTable('users', { id: Sequelize.INTEGER });
     */
-    return queryInterface.createTable('Comments', {
+    return queryInterface.createTable('Posts', {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         allowNull: false,
         autoIncrement: true,
       },
-      postId: {
+      categoryId: {
         type: Sequelize.INTEGER,
-        references: { model: 'Posts', key: 'id' },
+        references: { model: 'Categories', key: 'id' },
       },
-      message: {
+      title: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      hostname: {
+      content: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
+      thumbImg: {
+        type: Sequelize.STRING,
+      },
+      pv: {
+        type: Sequelize.INTEGER.UNSIGNED,
+        defaultValue: 0,
+      },
+      author: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      ip: {
+      originUrl: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -59,6 +70,6 @@ module.exports = {
       Example:
       return queryInterface.dropTable('users');
     */
-    return queryInterface.dropTable('Comments')
+    return queryInterface.dropTable('Posts')
   },
 }

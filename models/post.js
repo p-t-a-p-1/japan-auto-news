@@ -10,6 +10,8 @@ module.exports = (sequelize, DataTypes) => {
       pv: DataTypes.INTEGER.UNSIGNED,
       author: DataTypes.STRING,
       originUrl: DataTypes.STRING,
+      goodCount: DataTypes.INTEGER.UNSIGNED,
+      badCount: DataTypes.INTEGER.UNSIGNED,
     },
     {
       freezeTableName: true,
