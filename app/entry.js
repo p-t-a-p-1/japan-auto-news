@@ -76,7 +76,7 @@ $('.media__description, .article__main__content').each((i, e) => {
 /**
  * Goodボタン
  */
-$('.comment-score__btn--good').each((i, e) => {
+$('.score__btn--good').each((i, e) => {
   const button = $(e)
   button.click(() => {
     // 記事ID
@@ -84,9 +84,9 @@ $('.comment-score__btn--good').each((i, e) => {
     // コメントID
     const commentId = button.data('comment-id')
     // good・badのカウント
-    const count = button.data('comment-count')
+    const count = button.data('post-count')
     $.post(
-      `/post/${postId}/comment/${commentId}/good`,
+      `/post/${postId}/good`,
       { goodCount: count },
       (data) => {
         button.data('comment-count', data.goodCount)
@@ -101,17 +101,15 @@ $('.comment-score__btn--good').each((i, e) => {
 /**
  * Badボタン
  */
-$('.comment-score__btn--bad').each((i, e) => {
+$('.score__btn--bad').each((i, e) => {
   const button = $(e)
   button.click(() => {
     // 記事ID
     const postId = button.data('post-id')
-    // コメントID
-    const commentId = button.data('comment-id')
     // good・badのカウント
-    const count = button.data('comment-count')
+    const count = button.data('post-count')
     $.post(
-      `/post/${postId}/comment/${commentId}/bad`,
+      `/post/${postId}/bad`,
       { badCount: count },
       (data) => {
         button.data('comment-count', data.badCount)

@@ -116,121 +116,95 @@ router.get('/:postId', csrfProtection, (req, res, next) => {
 //   res.redirect('/post/' + addPostId)
 // })
 
-// // goodボタンクリックでapi叩いてカウント増やす
-// router.post('/:postId/comment/:commentId/good', (req, res, next) => {
-//   // 投稿ID
-//   const postId = req.params.postId
-//   // コメントID(primary key)
-//   const commentId = req.params.commentId
-//   // カウント + 1 で次のカウント
-//   let goodCount = req.body.goodCount
-//   const nextCount = goodCount + 1
-//   if (!goodCount.match(/^[0-9]+$/)) {
-//     // TODO 404ページを作ってそっちに飛ばす
-//     res.redirect('../')
-//   }
-//   goodCount = parseInt(goodCount)
-
-//   Comments.findOne({
-//     where: {
-//       id: commentId,
-//     },
-//   }).then((comment) => {
-//     if (comment.goodCount === goodCount) {
-//       /**
-//        * DBにあるいいねカウントの数とAPIで叩かれたクエリのいいねカウントが
-//        * 同じのみDBのカウント増やす
-//        */
-//       goodCount = goodCount + 1
-//       Comments.update(
-//         {
-//           goodCount: goodCount,
-//         },
-//         {
-//           where: {
-//             id: comment.id,
-//           },
-//         }
-//       )
-//         .then(() => {
-//           res.json({ status: 'OK', goodCount: goodCount })
-//         })
-//         .catch((error) => {
-//           console.log('ERROR処理')
-//           console.error(error)
-//         })
-//     }
-//   })
-// })
-
-// // badボタンクリックでapi叩いてカウント増やす
-// router.post('/:postId/comment/:commentId/bad', (req, res, next) => {
-//   // 投稿ID
-//   const postId = req.params.postId
-//   // コメントID(primary key)
-//   const commentId = req.params.commentId
-//   // カウント + 1 で次のカウント
-//   let badCount = req.body.badCount
-//   const nextCount = badCount + 1
-//   if (!badCount.match(/^[0-9]+$/)) {
-//     // TODO 404ページを作ってそっちに飛ばす
-//     res.redirect('../')
-//   }
-//   badCount = parseInt(badCount)
-
-//   Comments.findOne({
-//     where: {
-//       id: commentId,
-//     },
-//   }).then((comment) => {
-//     if (comment.badCount === badCount) {
-//       /**
-//        * DBにあるいいねカウントの数とAPIで叩かれたクエリのいいねカウントが
-//        * 同じのみDBのカウント増やす
-//        */
-//       badCount = badCount + 1
-//       Comments.update(
-//         {
-//           badCount: badCount,
-//         },
-//         {
-//           where: {
-//             id: comment.id,
-//           },
-//         }
-//       )
-//         .then(() => {
-//           res.json({ status: 'OK', badCount: badCount })
-//         })
-//         .catch((error) => {
-//           console.log('ERROR処理')
-//           console.error(error)
-//         })
-//       console.log(badCount)
-//     }
-//   })
-// })
-/**
- * クライアントのIPアドレス取得
- * @param {object} request クライアントのリクエスト
- */
-function getClientIP(request) {
-  if (request.headers['x-forwarded-for']) {
-    return request.headers['x-forwarded-for']
+// goodボタンクリックでapi叩いてカウント増やす
+router.post('/:postId/good', (req, res, next) => {
+  // 投稿ID
+  const postId = req.params.postId
+  // カウント + 1 で次のカウント
+  let goodCount = req.body.goodCount
+  const nextCount = goodCount + 1
+  if (!goodCount.match(/^[0-9]+$/)) {
+    // TODO 404ページを作ってそっちに飛ばす
+    res.redirect('../')
   }
+  goodCount = parseInt(goodCount)
 
-  if (request.connection && request.connection.remoteAddress) {
-    return request.connection.remoteAddress
-  }
+  Posts.findOne({
+    where: {
+      id: postId,
+    },
+  }).then((post) => {
+    if (post.goodCount === goodCount) {
+      /**
+       * DBにあるいいねカウントの数とAPIで叩かれたクエリのいいねカウントが
+       * 同じのみDBのカウント増やす
+       */
+      goodCount = goodCount + 1
+      Posts.update(
+        {
+          goodCount: goodCount,
+        },
+        {
+          where: {
+            id: post.id,
+          },
+        }
+      )
+        .then(() => {
+          res.json({ status: 'OK', goodCount: goodCount })
+        })
+        .catch((error) => {
+          console.log('ERROR処理')
+          console.error(error)
+        })
+    }
+  })
+})
 
-  if (request.connection.socket && request.connection.socket.remoteAddress) {
-    return request.connection.socket.remoteAddress
+// badボタンクリックでapi叩いてカウント増やす
+router.post('/:postId/bad', (req, res, next) => {
+  // 投稿ID
+  const postId = req.params.postId
+  // カウント + 1 で次のカウント
+  let badCount = req.body.badCount
+  const nextCount = badCount + 1
+  if (!badCount.match(/^[0-9]+$/)) {
+    // TODO 404ページを作ってそっちに飛ばす
+    res.redirect('../')
   }
+  badCount = parseInt(badCount)
 
-  if (request.socket && request.socket.remoteAddress) {
-    return request.socket.remoteAddress
-  }
-  return '0.0.0.0'
-}
+  Posts.findOne({
+    where: {
+      id: postId,
+    },
+  }).then((post) => {
+    if (post.badCount === badCount) {
+      /**
+       * DBにあるいいねカウントの数とAPIで叩かれたクエリのいいねカウントが
+       * 同じのみDBのカウント増やす
+       */
+      badCount = badCount + 1
+      Posts.update(
+        {
+          badCount: badCount,
+        },
+        {
+          where: {
+            id: post.id,
+          },
+        }
+      )
+        .then(() => {
+          res.json({ status: 'OK', badCount: badCount })
+        })
+        .catch((error) => {
+          console.log('ERROR処理')
+          console.error(error)
+        })
+      console.log(badCount)
+    }
+  })
+})
 
 module.exports = router

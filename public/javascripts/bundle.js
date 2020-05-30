@@ -181,7 +181,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.media__description, .article__ma
  * Goodボタン
  */
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('.comment-score__btn--good').each(function (i, e) {
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.score__btn--good').each(function (i, e) {
   var button = jquery__WEBPACK_IMPORTED_MODULE_0___default()(e);
   button.click(function () {
     // 記事ID
@@ -189,8 +189,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.comment-score__btn--good').each(
 
     var commentId = button.data('comment-id'); // good・badのカウント
 
-    var count = button.data('comment-count');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default.a.post("/post/".concat(postId, "/comment/").concat(commentId, "/good"), {
+    var count = button.data('post-count');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default.a.post("/post/".concat(postId, "/good"), {
       goodCount: count
     }, function (data) {
       button.data('comment-count', data.goodCount);
@@ -204,16 +204,14 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.comment-score__btn--good').each(
  * Badボタン
  */
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('.comment-score__btn--bad').each(function (i, e) {
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.score__btn--bad').each(function (i, e) {
   var button = jquery__WEBPACK_IMPORTED_MODULE_0___default()(e);
   button.click(function () {
     // 記事ID
-    var postId = button.data('post-id'); // コメントID
+    var postId = button.data('post-id'); // good・badのカウント
 
-    var commentId = button.data('comment-id'); // good・badのカウント
-
-    var count = button.data('comment-count');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default.a.post("/post/".concat(postId, "/comment/").concat(commentId, "/bad"), {
+    var count = button.data('post-count');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default.a.post("/post/".concat(postId, "/bad"), {
       badCount: count
     }, function (data) {
       button.data('comment-count', data.badCount);
