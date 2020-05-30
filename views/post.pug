@@ -7,14 +7,14 @@ block content
         img(src=post.thumbImg width="100%" alt=post.title)
       else
         img(src='/images/noimage.png' width="100%" alt=post.title)
-      div.article__head__info.info
+      div.info
         h1.info__title #{post.title}
         p.info__author #{post.author}
         - let postDate = post.createdAt.toLocaleDateString("ja-JP")
         p.info__date #{postDate}
-    div.article__main
-      p.article__content #{post.content}
-      p.article__link
+    div.article__main.content
+      p.content__text #{post.content}
+      p.content__link
         a(href=post.originUrl target="_blank") 続きはこちら
       div.article__btn.score
         div.score__btn

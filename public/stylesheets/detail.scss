@@ -10,21 +10,6 @@
       height: 100%;
       object-fit: cover;
     }
-    .info {
-      padding: 0 20px;
-      position: absolute;
-      bottom: 40px;
-      color: #fff;
-      letter-spacing: 0.05em;
-      text-shadow: 1px 1px 5px #555;
-      &__title {
-        margin: 0;
-        font-size: 20px;
-      }
-      &__date {
-        text-align: right;
-      }
-    }
   }
   &__main {
     border-radius: 20px;
@@ -32,10 +17,31 @@
     padding: 20px;
     background-color: #fff;
   }
-  &__content {
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      line-height: 1.8;
+}
+
+// 
+.info {
+  padding: 0 20px;
+  position: absolute;
+  bottom: 40px;
+  color: #fff;
+  letter-spacing: 0.05em;
+  text-shadow: 1px 1px 5px #555;
+  &__title {
+    margin: 0;
+    font-size: 20px;
+  }
+  &__date {
+    text-align: right;
+  }
+}
+
+// article main text
+.content {
+  &__text {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.8;
   }
   &__link {
     a {
@@ -50,6 +56,8 @@
     }
   }
 }
+
+// article score(good and bad)
 .score {
   margin-top: 20px;
   display: flex;
