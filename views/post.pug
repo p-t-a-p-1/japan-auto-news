@@ -13,52 +13,21 @@ block content
         - let postDate = post.createdAt.toLocaleDateString("ja-JP")
         p.info__date #{postDate}
     div.article__main
-      p.article__main__content #{post.content}
-      p.article__main__link
+      p.article__content #{post.content}
+      p.article__link
         a(href=post.originUrl target="_blank") 続きはこちら
-      div.article__btn
-        div.comment-item__score.comment-score
-          div.comment-score__btn
-            button(
-              data-post-id=post.id
-              data-post-count=post.goodCount
-            ).comment-score__btn--good
-              i.far.fa-thumbs-up
-            span.comment-score__btn__count #{post.goodCount}
-          div.comment-score__btn
-            button(
-              data-post-id=post.id
-              data-comment-count=post.badCount
-            ).comment-score__btn--bad
-              i.far.fa-thumbs-down
-            span.comment-score__btn__count #{post.badCount}
-      //- - let hasComments = comments.length >= 1
-      //- if hasComments
-      //-   ul.article__main__comment.comment-list
-      //-     each comment in comments
-      //-       li.comment-list__item.comment-item
-      //-         p.comment-item__message #{comment.message}
-      //-         div.comment-item__score.comment-score
-      //-           div.comment-score__btn
-      //-             button(
-      //-               data-post-id=post.id
-      //-               data-comment-id=comment.id
-      //-               data-comment-count=comment.goodCount
-      //-             ).comment-score__btn--good
-      //-               i.far.fa-thumbs-up
-      //-             span.comment-score__btn__count #{comment.goodCount}
-      //-           div.comment-score__btn
-      //-             button(
-      //-               data-post-id=post.id
-      //-               data-comment-id=comment.id
-      //-               data-comment-count=comment.badCount
-      //-             ).comment-score__btn--bad
-      //-               i.far.fa-thumbs-down
-      //-             span.comment-score__btn__count #{comment.badCount}
-      //- else
-      //-   p.comment-list--no コメントはまだありません
-      //- - let actionUrl = '/post/comment/' + post.id
-      //- form(method="post", action=actionUrl).article__main__form.form
-      //-   input(type="hidden" name="_csrf" value!=csrfToken)
-      //-   textarea(name="message").form__message.message
-      //-   button(type="submit").form__submit.submit コメントを書く
+      div.article__btn.score
+        div.score__btn
+          button(
+            data-post-id=post.id
+            data-post-count=post.goodCount
+          ).score__btn--good
+            i.far.fa-thumbs-up
+          span.score__btn__count #{post.goodCount}
+        div.score__btn
+          button(
+            data-post-id=post.id
+            data-comment-count=post.badCount
+          ).score__btn--bad
+            i.far.fa-thumbs-down
+          span.score__btn__count #{post.badCount}
