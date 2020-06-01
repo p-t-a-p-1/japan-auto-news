@@ -22,7 +22,7 @@ router.get('/', function (req, res, next) {
        */
       return Posts.findAll({
         limit: 5,
-        order: [['updatedAt', 'DESC']],
+        order: [['createdAt', 'DESC']],
       })
     })
     .then((posts) => {

@@ -20,8 +20,8 @@ router.get('/:postId', csrfProtection, (req, res, next) => {
   // 記事ID
   const postId = req.params.postId
   if (!postId.match(/^[0-9]+$/)) {
-    // TODO 404ページを作ってそっちに飛ばす
-    res.redirect('../')
+    res.redirect('/')
+    return
   }
 
   // 記事情報保存
@@ -36,6 +36,7 @@ router.get('/:postId', csrfProtection, (req, res, next) => {
       // 記事が見つからない場合は一覧リダイレクト
       if (post === null) {
         res.redirect('/')
+        return
       }
       // 記事IDから紐付くコメント取得
       post.createdAt = post.createdAt.toDateString()
