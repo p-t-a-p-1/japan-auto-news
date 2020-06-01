@@ -9,7 +9,7 @@ const config = require(__dirname + '/../config/config.json')[env]
 const db = {}
 
 const sequelize = new Sequelize(
-  //process.env.DATABASE_URL ||
+  process.env.DATABASE_URL ||
     'postgres://postgres:postgres@localhost/localnews',
   {
     operatorsAliases: false,
