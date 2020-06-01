@@ -32,6 +32,11 @@ router.get('/:postId', csrfProtection, (req, res, next) => {
     },
   })
     .then((post) => {
+
+      // 記事が見つからない場合は一覧リダイレクト
+      if (post === null) {
+        res.redirect('/')
+      }
       // 記事IDから紐付くコメント取得
       post.createdAt = post.createdAt.toDateString()
       storedPost = post
@@ -60,61 +65,12 @@ router.get('/:postId', csrfProtection, (req, res, next) => {
         csrfToken: req.csrfToken(),
       })
 
-      // return Comments.findAll({
-      //   where: {
-      //     postId: post.id,
-      //   },
-      // })
     })
-    // .then((comments) => {
-    //   // 記事情報・コメントからpost.pugにデータ渡してページ描画
-    //   res.render('post', {
-    //     title: storedPost.title + '｜国内最新ニュース',
-    //     description: storedPost.content.slice(0, 90),
-    //     currentUrl: req.protocol + '://' + req.headers.host + req.originalUrl,
-    //     ogType: 'article',
-    //     ogImageUrl: storedPost.thumbImg,
-    //     post: storedPost,
-    //     comments: comments,
-    //     csrfToken: req.csrfToken(),
-    //   })
-    // })
     .catch((error) => {
       console.log('ERROR処理')
       console.error(error)
     })
 })
-
-// // コメントをDBに追加
-// router.post('/comment/:postId', csrfProtection, (req, res, next) => {
-//   let addPostId = req.params.postId
-
-//   // TODO リクエストのホスト名が一致していないとコメント挿入できないようにする
-//   // if (req.url === ) {
-//   // }
-
-//   if (!addPostId.match(/^[0-9]+$/)) {
-//     // TODO 404ページを作ってそっちに飛ばす
-//     res.redirect('/')
-//   }
-
-//   // コメント送信元のIPアドレス取得
-//   const clientIP = getClientIP(req)
-//   let createdAt = moment().format('YYYY-MM-DD HH:mm:ss')
-//   Comments.create({
-//     postId: addPostId,
-//     message: req.body.message,
-//     hostname: os.hostname(),
-//     ip: clientIP,
-//     goodCount: 0,
-//     badCount: 0,
-//     createdAt: createdAt,
-//   }).catch((error) => {
-//     console.log('ERROR処理')
-//     console.error(error)
-//   })
-//   res.redirect('/post/' + addPostId)
-// })
 
 // goodボタンクリックでapi叩いてカウント増やす
 router.post('/:postId/good', (req, res, next) => {
