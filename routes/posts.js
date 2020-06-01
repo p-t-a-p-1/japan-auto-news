@@ -41,7 +41,8 @@ router.get('/:postId', csrfProtection, (req, res, next) => {
       // 記事IDから紐付くコメント取得
       post.createdAt = post.createdAt.toDateString()
       storedPost = post
-      Posts.update(
+
+      return Posts.update(
         {
           pv: post.pv + 1,
         },
@@ -50,11 +51,21 @@ router.get('/:postId', csrfProtection, (req, res, next) => {
             id: post.id,
           },
         }
-      ).catch((error) => {
-        console.log('ERROR処理')
-        console.error(error)
+      )
+    })
+    .then(() => {
+
+      // 関連記事取得（同カテゴリから３件）
+      return Posts.findAll({
+        where: {
+          categoryId: storedPost.categoryId, // カテゴリのId
+        },
+        limit: 3, // 記事数
+        order: [['createdAt', 'DESC']], // PV数が多い順から
       })
 
+    })
+    .then((recomPosts) => {
       // 記事情報・コメントからpost.pugにデータ渡してページ描画
       res.render('post', {
         title: storedPost.title + '｜国内最新ニュース',
@@ -63,9 +74,9 @@ router.get('/:postId', csrfProtection, (req, res, next) => {
         ogType: 'article',
         ogImageUrl: storedPost.thumbImg,
         post: storedPost,
+        recomPosts: recomPosts,
         csrfToken: req.csrfToken(),
       })
-
     })
     .catch((error) => {
       console.log('ERROR処理')

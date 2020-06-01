@@ -31,3 +31,19 @@ block content
           ).score__btn--bad
             i.far.fa-thumbs-down
           span.score__btn__count #{post.badCount}
+    - var hasRecommend = recomPosts.length >= 1
+    if hasRecommend
+      div.article__sub.recommend
+        ul.reccomend__list
+          each recomPost in recomPosts
+            - var recomPostLink = '/post/' + recomPost.id
+            li.reccommend__item.media
+              a(href=recomPostLink).media__link
+                div.media__info
+                  h3.media__title #{recomPost.title}
+                  p.media__description #{recomPost.content}
+                div.media__img
+                  if recomPost.thumbImg !== null
+                    img(src=recomPost.thumbImg width="100%" alt=recomPost.title)
+                  else
+                    img(src='/images/noimage.png' width="100%" alt=recomPost.title)
