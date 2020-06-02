@@ -59,7 +59,7 @@ String.prototype.toUnicode = function () {
  */
 // 文字化けしている文字コード
 let replacementCharacter = '\\ufffd'
-$('.media__description, .article__main__content').each((i, e) => {
+$('.media__description, .article__main__content, .article .content .content__text').each((i, e) => {
   // 一覧の各記事の詳細文、詳細の本文を取得し文字化けしていないか判定
   let articleText = $(e)
   // unicodeに変換
