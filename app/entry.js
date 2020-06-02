@@ -1,15 +1,15 @@
 'use strict'
-// jquery
-import $ from 'jquery'
-import 'slick-carousel'
 
-// css
-import '../public/stylesheets/remedy.css'
-import '../public/stylesheets/slick.css'
 // scss
 import '../public/stylesheets/common.scss'
 import '../public/stylesheets/list.scss'
 import '../public/stylesheets/detail.scss'
+// css
+import '../public/stylesheets/remedy.css'
+import '../public/stylesheets/slick.css'
+// jquery
+import $ from 'jquery'
+import 'slick-carousel'
 
 /**
  * 一覧の人気記事のスライダー

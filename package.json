@@ -16,6 +16,7 @@
     "helmet": "3.8.2",
     "http-errors": "~1.6.2",
     "jquery": "3.4.1",
+    "juice": "^6.0.0",
     "morgan": "~1.9.0",
     "newsapi": "^2.4.0",
     "node-sass": "^4.13.1",

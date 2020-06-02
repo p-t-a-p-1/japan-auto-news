@@ -14,6 +14,7 @@ html
     meta(name="viewport" content="width=device-width, initial-scale=1")
     meta(name="google-site-verification" content="qY8qVaEOkNi7vcvkrF3yoXZEAH1SWsa45yULIGT4fbs")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Oswald&display=swap")
+    link(rel="stylesheet", href="/stylesheets/common.css")
     link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css", integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv",crossorigin="anonymous")
   body
     header.header
@@ -42,7 +43,7 @@ html
         small © 2020 JAPAN-TODAY-NEWS
     //- footer
 
-    script(src="/javascripts/bundle.js")
+    script(src="/javascripts/bundle.js" defer)
     script.
       window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
       ga('create','UA-131601887-3','auto');ga('send','pageview')
