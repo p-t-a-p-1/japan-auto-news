@@ -29,6 +29,9 @@ h6 {
 
 // header
 .header {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
   .header-logo {
     font-family: 'Oswald', sans-serif;
     text-align: center;
@@ -40,31 +43,124 @@ h6 {
   }
 }
 
-// header nav
-.nav {
+// menu
+.menu {
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+// menu button
+.menu-btn {
   position: relative;
+  width: 50px;
+  height: 44px;
+  z-index: 500;
+  cursor: pointer;
+  span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    border-radius: 4px;
+    &:nth-of-type(1) {
+      top: 0;
+    }
+    &:nth-of-type(2) {
+      top: 20px;
+    }
+    &:nth-of-type(3) {
+      bottom: 0;
+    }
+  }
 }
-.nav-wrap {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+.menu-btn,
+.menu-btn span {
+  display: inline-block;
+  transition: all .5s;
+  box-sizing: border-box;
 }
-.nav-list {
-  display: flex;
-  justify-content: center;
-  height: 50px;
-  line-height: 40px;
-  margin: 0 20px;
-  .nav-item {
-    float: left;
-    width: 110px;
-    text-align: center;
-    &__link {
-      display: block;
-      &--active {
-        border-bottom: 1px solid #555;
+
+// menu opened navigation
+.menu--active {
+  .menu-nav {
+    opacity: 1;
+    visibility: visible;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(40,40,40,0.7);
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+  }
+}
+.overlay {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+// menu opened btn
+.menu--active {
+  .menu-btn {
+    span {
+      &:nth-of-type(1) {
+        -webkit-transform: translateY(20px) rotate(-45deg);
+        transform: translateY(20px) rotate(-45deg);
+      }
+      &:nth-of-type(2) {
+        opacity: 0;
+      }
+      &:nth-of-type(3) {
+        -webkit-transform: translateY(-20px) rotate(45deg);
+        transform: translateY(-20px) rotate(45deg);
       }
     }
+  }
+}
+
+// menu opened content
+.menu-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  color: #000;
+  height: 100%;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: 200;
+  overflow-x: scroll;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  &__list {
+    margin-top: -200px;
+    width: 100%;
+  }
+  &__item {
+    text-align: center;
+  }
+  &__link {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
   }
 }
 

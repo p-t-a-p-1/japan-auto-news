@@ -12,6 +12,15 @@ import $ from 'jquery'
 import 'slick-carousel'
 
 /**
+ * ハンバーガーメニュー
+ */
+$('.menu-btn').on('click', function() {
+  $('body').toggleClass('menu--active')
+  return false
+})
+
+
+/**
  * 一覧の人気記事のスライダー
  */
 $('.popular-slider').slick({

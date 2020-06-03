@@ -20,23 +20,30 @@ html
     header.header
       h1.header-logo
         a(href="/").logo JAPAN-TODAY-NEWS
+      div.menu
+        div.menu-btn
+          span
+          span
+          span
+
+      //- category navigation
     //- header
 
     main
-      nav.nav
-        div.nav-wrap
-          ul.nav-list
-            li.nav-item
-              a(href="/category/general/").nav-item__link 一般
-            li.nav-item
-              a(href="/category/entertainment/").nav-item__link エンタメ
-            li.nav-item
-              a(href="/category/health/").nav-item__link 健康
-            li.nav-item
-              a(href="/category/sports/").nav-item__link スポーツ
-      //- category navigation
       block content
     //- main
+
+    nav.menu-nav
+      ul.menu-nav__list
+        li.menu-nav__item
+          a(href="/category/general/").menu-nav__link General
+        li.menu-nav__item
+          a(href="/category/entertainment/").menu-nav__link Entertainment
+        li.menu-nav__item
+          a(href="/category/health/").menu-nav__link Health
+        li.menu-nav__item
+          a(href="/category/sports/").menu-nav__link Sports
+    div.overlay
 
     footer
       div.copyright
