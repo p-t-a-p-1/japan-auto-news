@@ -34,6 +34,7 @@ block content
     - var hasRecommend = recomPosts.length >= 1
     if hasRecommend
       div.article__sub.recommend
+        h2.recommend__title.content-title Recommend
         ul.reccomend__list
           each recomPost in recomPosts
             - var recomPostLink = '/post/' + recomPost.id

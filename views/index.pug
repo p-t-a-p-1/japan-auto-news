@@ -5,7 +5,7 @@ block content
   - var hasPopulatePosts = populatePosts.length >= 1
   if hasPopulatePosts
     aside.popular
-      h2.popular__title Trending
+      h2.popular__title.content-title Trending
       div.popular-slider
         each post in populatePosts
           - var postLink = '/post/' + post.id
@@ -21,7 +21,7 @@ block content
   - var hasPosts = posts.length >= 1
   if hasPosts
     div.latest
-      h2.latest__title Latest
+      h2.latest__title.content-title Latest
       ul.latest-list
         each post in posts
           - var postLink = '/post/' + post.id

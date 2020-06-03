@@ -57,6 +57,10 @@ h6 {
   .copyright small {
     font-size: 15px; }
 
+.content-title {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.05em; }
+
 @media screen and (min-width: 769px) {
   .nav-list {
     margin: auto;
