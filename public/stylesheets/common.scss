@@ -32,30 +32,31 @@ h6 {
   position: relative;
   max-width: 1000px;
   margin: auto;
-  .header-logo {
-    font-family: 'Oswald', sans-serif;
-    text-align: center;
-    margin: 15px auto;
-    letter-spacing: 0.05em;
-    font-size: 7vw;
-    &__link {
-    }
+  display: flex;
+  align-items: center;
+}
+.header-logo {
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  margin: 15px auto;
+  letter-spacing: 0.05em;
+  font-size: 28px;
+  &__link {
   }
 }
 
+
 // menu
 .menu {
-  display: inline-block;
   position: absolute;
   right: 20px;
-  top: 20px;
 }
 
 // menu button
 .menu-btn {
   position: relative;
-  width: 50px;
-  height: 44px;
+  width: 30px;
+  height: 25px;
   z-index: 500;
   cursor: pointer;
   span {
@@ -69,7 +70,7 @@ h6 {
       top: 0;
     }
     &:nth-of-type(2) {
-      top: 20px;
+      top: 11px;
     }
     &:nth-of-type(3) {
       bottom: 0;
@@ -117,15 +118,15 @@ h6 {
   .menu-btn {
     span {
       &:nth-of-type(1) {
-        -webkit-transform: translateY(20px) rotate(-45deg);
-        transform: translateY(20px) rotate(-45deg);
+        -webkit-transform: translateY(6px) rotate(-45deg);
+        transform: translateY(6px) rotate(-45deg);
       }
       &:nth-of-type(2) {
         opacity: 0;
       }
       &:nth-of-type(3) {
-        -webkit-transform: translateY(-20px) rotate(45deg);
-        transform: translateY(-20px) rotate(45deg);
+        -webkit-transform: translateY(-15px) rotate(45deg);
+        transform: translateY(-15px) rotate(45deg);
       }
     }
   }
@@ -160,7 +161,7 @@ h6 {
   }
   &__link {
     font-family: 'Oswald', sans-serif;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -181,6 +182,9 @@ h6 {
 
 // タブレット縦, スマートフォン横
 @media screen and (min-width: 481px) {
+  .header-logo {
+    font-size: 35px;
+  }
 }
 
 // デスクトップ, タブレット横
@@ -190,9 +194,44 @@ h6 {
     display: flex;
     justify-content: center;
   }
-  .header {
-    .header-logo {
-      font-size: 50px;
+  .header-logo {
+    font-size: 50px;
+  }
+  .menu {
+    top: 20px;
+  }
+  .menu-btn {
+    width: 50px;
+    height: 44px;
+    span {
+      &:nth-of-type(1) {
+        top: 0;
+      }
+      &:nth-of-type(2) {
+        top: 20px;
+      }
+      &:nth-of-type(3) {
+        bottom: 0;
+      }
     }
   }
+  .menu--active {
+    .menu-btn {
+      span {
+        &:nth-of-type(1) {
+          -webkit-transform: translateY(20px) rotate(-45deg);
+          transform: translateY(20px) rotate(-45deg);
+        }
+        &:nth-of-type(2) {
+          opacity: 0;
+        }
+        &:nth-of-type(3) {
+          -webkit-transform: translateY(-20px) rotate(45deg);
+          transform: translateY(-20px) rotate(45deg);
+        }
+      }
+    }
+  }
+
+
 }

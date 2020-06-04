@@ -8,9 +8,14 @@
 
 // slider module
 .popular-slider {
+  display: none;
   .slick-slide {
     margin: 0 5px;
   }
+  &.slick-initialized {
+    display: block !important;
+  }
+
   &__item {
     .slider-link {
       display: block;

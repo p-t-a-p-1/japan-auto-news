@@ -6,7 +6,7 @@ block content
   if hasPopulatePosts
     aside.popular
       h2.popular__title.content-title Trending
-      div.popular-slider
+      div.popular-slider(style="display:none;")
         each post in populatePosts
           - var postLink = '/post/' + post.id
           div.popular-slider__item
