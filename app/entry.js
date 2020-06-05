@@ -1,7 +1,6 @@
 'use strict'
 
 // scss
-import '../public/stylesheets/common.scss'
 import '../public/stylesheets/list.scss'
 import '../public/stylesheets/detail.scss'
 // css

@@ -90,22 +90,19 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _public_stylesheets_common_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _public_stylesheets_common_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_public_stylesheets_common_scss__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _public_stylesheets_list_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
-/* harmony import */ var _public_stylesheets_list_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_public_stylesheets_list_scss__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _public_stylesheets_detail_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
-/* harmony import */ var _public_stylesheets_detail_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_public_stylesheets_detail_scss__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _public_stylesheets_remedy_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9);
-/* harmony import */ var _public_stylesheets_remedy_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_public_stylesheets_remedy_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _public_stylesheets_slick_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(11);
-/* harmony import */ var _public_stylesheets_slick_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_public_stylesheets_slick_css__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(13);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(14);
-/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(slick_carousel__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _public_stylesheets_list_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _public_stylesheets_list_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_public_stylesheets_list_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _public_stylesheets_detail_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+/* harmony import */ var _public_stylesheets_detail_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_public_stylesheets_detail_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _public_stylesheets_remedy_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
+/* harmony import */ var _public_stylesheets_remedy_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_public_stylesheets_remedy_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _public_stylesheets_slick_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9);
+/* harmony import */ var _public_stylesheets_slick_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_public_stylesheets_slick_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(11);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(12);
+/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(slick_carousel__WEBPACK_IMPORTED_MODULE_5__);
  // scss
-
 
 
  // css
@@ -119,15 +116,15 @@ __webpack_require__.r(__webpack_exports__);
  * ハンバーガーメニュー
  */
 
-jquery__WEBPACK_IMPORTED_MODULE_5___default()('.menu-btn').on('click', function () {
-  jquery__WEBPACK_IMPORTED_MODULE_5___default()('body').toggleClass('menu--active');
+jquery__WEBPACK_IMPORTED_MODULE_4___default()('.menu-btn').on('click', function () {
+  jquery__WEBPACK_IMPORTED_MODULE_4___default()('body').toggleClass('menu--active');
   return false;
 });
 /**
  * 一覧の人気記事のスライダー
  */
 
-jquery__WEBPACK_IMPORTED_MODULE_5___default()('.popular-slider').slick({
+jquery__WEBPACK_IMPORTED_MODULE_4___default()('.popular-slider').slick({
   dots: false,
   arrows: false,
   autoplay: false,
@@ -171,9 +168,9 @@ String.prototype.toUnicode = function () {
 
 
 var replacementCharacter = "\\ufffd";
-jquery__WEBPACK_IMPORTED_MODULE_5___default()('.media__description, .article__main__content, .article .content .content__text').each(function (i, e) {
+jquery__WEBPACK_IMPORTED_MODULE_4___default()('.media__description, .article__main__content, .article .content .content__text').each(function (i, e) {
   // 一覧の各記事の詳細文、詳細の本文を取得し文字化けしていないか判定
-  var articleText = jquery__WEBPACK_IMPORTED_MODULE_5___default()(e); // unicodeに変換
+  var articleText = jquery__WEBPACK_IMPORTED_MODULE_4___default()(e); // unicodeに変換
 
   var unicodeText = articleText.text().toUnicode();
 
@@ -189,8 +186,8 @@ jquery__WEBPACK_IMPORTED_MODULE_5___default()('.media__description, .article__ma
  * Goodボタン
  */
 
-jquery__WEBPACK_IMPORTED_MODULE_5___default()('.score__btn--good').each(function (i, e) {
-  var button = jquery__WEBPACK_IMPORTED_MODULE_5___default()(e);
+jquery__WEBPACK_IMPORTED_MODULE_4___default()('.score__btn--good').each(function (i, e) {
+  var button = jquery__WEBPACK_IMPORTED_MODULE_4___default()(e);
   button.click(function () {
     // 記事ID
     var postId = button.data('post-id'); // コメントID
@@ -198,7 +195,7 @@ jquery__WEBPACK_IMPORTED_MODULE_5___default()('.score__btn--good').each(function
     var commentId = button.data('comment-id'); // good・badのカウント
 
     var count = button.data('post-count');
-    jquery__WEBPACK_IMPORTED_MODULE_5___default.a.post("/post/".concat(postId, "/good"), {
+    jquery__WEBPACK_IMPORTED_MODULE_4___default.a.post("/post/".concat(postId, "/good"), {
       goodCount: count
     }, function (data) {
       button.data('comment-count', data.goodCount);
@@ -212,14 +209,14 @@ jquery__WEBPACK_IMPORTED_MODULE_5___default()('.score__btn--good').each(function
  * Badボタン
  */
 
-jquery__WEBPACK_IMPORTED_MODULE_5___default()('.score__btn--bad').each(function (i, e) {
-  var button = jquery__WEBPACK_IMPORTED_MODULE_5___default()(e);
+jquery__WEBPACK_IMPORTED_MODULE_4___default()('.score__btn--bad').each(function (i, e) {
+  var button = jquery__WEBPACK_IMPORTED_MODULE_4___default()(e);
   button.click(function () {
     // 記事ID
     var postId = button.data('post-id'); // good・badのカウント
 
     var count = button.data('post-count');
-    jquery__WEBPACK_IMPORTED_MODULE_5___default.a.post("/post/".concat(postId, "/bad"), {
+    jquery__WEBPACK_IMPORTED_MODULE_4___default.a.post("/post/".concat(postId, "/bad"), {
       badCount: count
     }, function (data) {
       button.data('comment-count', data.badCount);
@@ -239,14 +236,14 @@ var currentURL = location.pathname;
 if (currentURL.match(/category/)) {
   var category = currentURL.split('/category/')[1].replace(/\//, ''); // カテゴリー絞り込み かつ 該当リンク だったらグローバルナビにクラス付与
 
-  jquery__WEBPACK_IMPORTED_MODULE_5___default()('.nav-item').each(function () {
-    var thisPath = jquery__WEBPACK_IMPORTED_MODULE_5___default()(this).find('a').attr('href').split('category')[1]; // general, entertainment....
+  jquery__WEBPACK_IMPORTED_MODULE_4___default()('.nav-item').each(function () {
+    var thisPath = jquery__WEBPACK_IMPORTED_MODULE_4___default()(this).find('a').attr('href').split('category')[1]; // general, entertainment....
 
     var thisCategory = thisPath.split('/')[1];
 
     if (category === thisCategory) {
-      jquery__WEBPACK_IMPORTED_MODULE_5___default()(this).find('a').addClass('nav-item__link--active');
-      jquery__WEBPACK_IMPORTED_MODULE_5___default()(this).prependTo('.nav-list');
+      jquery__WEBPACK_IMPORTED_MODULE_4___default()(this).find('a').addClass('nav-item__link--active');
+      jquery__WEBPACK_IMPORTED_MODULE_4___default()(this).prependTo('.nav-list');
     }
   });
 }
@@ -255,9 +252,9 @@ if (currentURL.match(/category/)) {
  */
 
 
-if (jquery__WEBPACK_IMPORTED_MODULE_5___default()('.article__head__info .info__date').length > 0) {
+if (jquery__WEBPACK_IMPORTED_MODULE_4___default()('.article__head__info .info__date').length > 0) {
   // 詳細の日付取得
-  var dateText = jquery__WEBPACK_IMPORTED_MODULE_5___default()('.article__head__info .info__date').text(); // 年 - 月 - 日
+  var dateText = jquery__WEBPACK_IMPORTED_MODULE_4___default()('.article__head__info .info__date').text(); // 年 - 月 - 日
 
   var dateArr = dateText.split('-'); // 月の0埋め
 
@@ -265,7 +262,7 @@ if (jquery__WEBPACK_IMPORTED_MODULE_5___default()('.article__head__info .info__d
 
   var dateDay = zeroPadding(dateArr[2], 2); // テキストの書き換え
 
-  jquery__WEBPACK_IMPORTED_MODULE_5___default()('.article__head__info .info__date').text(dateArr[0] + '-' + dateMonth + '-' + dateDay);
+  jquery__WEBPACK_IMPORTED_MODULE_4___default()('.article__head__info .info__date').text(dateArr[0] + '-' + dateMonth + '-' + dateDay);
 }
 /**
  * 数値の0埋め
@@ -587,7 +584,7 @@ module.exports = function (list, options) {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "body{font-family:'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;word-break:break-all}a{color:#32282e;text-decoration:none}a:hover{opacity:0.7}ul{list-style-type:none;margin:0;padding:0}h1,h2,h3,h4,h5,h6{margin:0}.header{position:relative;max-width:1000px;margin:auto;display:flex;align-items:center}.header-logo{font-family:'Oswald', sans-serif;text-align:center;margin:15px auto;letter-spacing:0.05em;font-size:28px}.menu{position:absolute;right:20px}.menu-btn{position:relative;width:30px;height:25px;z-index:500;cursor:pointer}.menu-btn span{position:absolute;left:0;width:100%;height:4px;background-color:#000;border-radius:4px}.menu-btn span:nth-of-type(1){top:0}.menu-btn span:nth-of-type(2){top:11px}.menu-btn span:nth-of-type(3){bottom:0}.menu-btn,.menu-btn span{display:inline-block;transition:all .5s;box-sizing:border-box}.menu--active .menu-nav{opacity:1;visibility:visible}.menu--active .overlay{position:fixed;top:0;right:0;bottom:0;left:0;opacity:1;visibility:visible;background-color:rgba(40,40,40,0.7);width:100%;height:100%;z-index:100}.overlay{opacity:0;visibility:hidden;-webkit-transition:all 0.4s;-moz-transition:all 0.4s;-o-transition:all 0.4s;transition:all 0.4s}.menu--active .menu-btn span:nth-of-type(1){-webkit-transform:translateY(6px) rotate(-45deg);transform:translateY(6px) rotate(-45deg)}.menu--active .menu-btn span:nth-of-type(2){opacity:0}.menu--active .menu-btn span:nth-of-type(3){-webkit-transform:translateY(-15px) rotate(45deg);transform:translateY(-15px) rotate(45deg)}.menu-nav{display:flex;justify-content:center;align-items:center;background:#fff;color:#000;height:100%;opacity:0;position:fixed;right:0;top:0;visibility:hidden;width:100%;z-index:200;overflow-x:scroll;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;-o-transition:all 0.5s;transition:all 0.5s}.menu-nav__list{margin-top:-200px;width:100%}.menu-nav__item{text-align:center}.menu-nav__link{font-family:'Oswald', sans-serif;font-size:2.5rem}.copyright{margin:10px 0;text-align:center}.copyright small{font-size:15px}.content-title{font-family:'Oswald', sans-serif;letter-spacing:0.05em}@media screen and (min-width: 481px){.header-logo{font-size:35px}}@media screen and (min-width: 769px){.nav-list{margin:auto;display:flex;justify-content:center}.header-logo{font-size:50px}.menu{top:20px}.menu-btn{width:50px;height:44px}.menu-btn span:nth-of-type(1){top:0}.menu-btn span:nth-of-type(2){top:20px}.menu-btn span:nth-of-type(3){bottom:0}.menu--active .menu-btn span:nth-of-type(1){-webkit-transform:translateY(20px) rotate(-45deg);transform:translateY(20px) rotate(-45deg)}.menu--active .menu-btn span:nth-of-type(2){opacity:0}.menu--active .menu-btn span:nth-of-type(3){-webkit-transform:translateY(-20px) rotate(45deg);transform:translateY(-20px) rotate(45deg)}}\n", ""]);
+exports.push([module.i, ".popular{margin-top:10px}.popular__title{margin-bottom:5px}.popular-slider{display:none}.popular-slider .slick-slide{margin:0 5px}.popular-slider.slick-initialized{display:block !important}.popular-slider__item .slider-link{display:block;position:relative}.popular-slider__item .slider-link__title{position:absolute;width:90%;bottom:10px;left:0;right:0;margin:auto;color:#fff;font-weight:500;letter-spacing:0.02em;line-height:1.8;text-shadow:1px 1px 5px #555}.popular-slider__item .slider-link__img{border-radius:20px;object-fit:cover;height:45vw;max-height:200px;width:100%}.latest{margin:20px}.latest__title{margin-bottom:5px}.media{padding:5px 0}.media__link{display:flex;justify-content:space-between;align-items:center;min-height:75px}.media__info{width:75%}.media__title{font-size:15px;font-weight:500}.media__description{display:none}.media__img{width:20%}.media__img img{width:100%;height:50px;object-fit:cover;border-radius:10px}.media+.media{border-top:1px solid #999}@media screen and (min-width: 481px){.media__info{width:70%}.media__img{width:25%}.media__img img{height:70px}}@media screen and (min-width: 769px){.popular{max-width:1000px;margin:auto;padding:0 20px}.popular__title{font-size:2em}.latest{max-width:1000px;margin:20px auto;padding:0 20px}.latest__title{font-size:2em}.media{padding:20px 0}.media__link{align-items:unset;min-height:100px}.media__info{width:65%}.media__title{font-size:1.5rem;font-weight:bold;margin-bottom:10px}.media__description{display:block}.media__img{width:30%;display:flex;align-items:center}.media__img img{width:100%;height:180px;object-fit:cover;border-radius:10px}}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -726,7 +723,7 @@ module.exports = exported;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".popular{margin-top:10px}.popular__title{margin:0 20px 5px}.popular-slider{display:none}.popular-slider .slick-slide{margin:0 5px}.popular-slider.slick-initialized{display:block !important}.popular-slider__item .slider-link{display:block;position:relative}.popular-slider__item .slider-link__title{position:absolute;width:90%;bottom:10px;left:0;right:0;margin:auto;color:#fff;font-weight:500;letter-spacing:0.02em;line-height:1.8;text-shadow:1px 1px 5px #555}.popular-slider__item .slider-link__img{border-radius:20px;object-fit:cover;height:45vw;max-height:200px;width:100%}.latest{margin:20px}.latest__title{margin-bottom:5px}.media{padding:5px 0}.media__link{display:flex;justify-content:space-between;align-items:center;min-height:75px}.media__info{width:75%}.media__title{font-size:15px;font-weight:500}.media__description{display:none}.media__img{width:20%}.media__img img{width:100%;height:50px;object-fit:cover;border-radius:10px}.media+.media{border-top:1px solid #999}@media screen and (min-width: 481px){.media__info{width:70%}.media__img{width:25%}.media__img img{height:70px}}@media screen and (min-width: 769px){.popular{max-width:1000px;margin:auto;padding:0 20px}.popular__title{font-size:2em}.latest{max-width:1000px;margin:20px auto;padding:0 20px}.latest__title{font-size:2em}.media{padding:20px 0}.media__link{align-items:unset;min-height:100px}.media__info{width:65%}.media__title{font-size:1.5rem;font-weight:bold;margin-bottom:10px}.media__description{display:block}.media__img{width:30%;display:flex;align-items:center}.media__img img{width:100%;height:180px;object-fit:cover;border-radius:10px}}\n", ""]);
+exports.push([module.i, ".article{margin-top:10px}.article__head{position:relative;height:45vh}.article__head img{position:absolute;z-index:-1;width:100%;height:100%;object-fit:cover}.article__main{border-radius:20px;margin-top:-30px;padding:20px;background-color:#fff}.info{padding:0 20px;position:absolute;bottom:40px;color:#fff;letter-spacing:0.05em;text-shadow:1px 1px 5px #555}.info__title{margin:0;font-size:20px}.info__date{text-align:right}.content__text{font-weight:500;letter-spacing:0.02em;line-height:1.8}.content__link a{margin:20px 0;display:flex;justify-content:center;align-items:center;border:1px solid #32282e;border-radius:3px;text-decoration:none;height:44px}.score{margin-top:20px;display:flex;justify-content:flex-end;overflow:hidden}.score__btn{float:left;display:flex;align-items:center;overflow:hidden}.score__btn button{float:left;display:flex;justify-content:center;align-items:center;width:36px;height:36px;border:1px solid #999;border-radius:50%;background-color:#fff;outline:none;transition:0.4s}.score__btn button:disabled{border:1px solid #fff;color:#fff}.score__btn__count{margin:0 10px;float:left}.score__btn--good:disabled{background-color:#00c853}.score__btn--bad:disabled{background-color:#ff8181}.recommend{margin:20px}@media screen and (min-width: 769px){.article{max-width:1000px;margin:20px auto 0;padding:0 20px}.article__head .info{width:100%}.article__head img{border-radius:20px}.article__link a{height:70px;font-size:1.2em}}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -765,7 +762,7 @@ module.exports = exported;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".article{margin-top:10px}.article__head{position:relative;height:45vh}.article__head img{position:absolute;z-index:-1;width:100%;height:100%;object-fit:cover}.article__main{border-radius:20px;margin-top:-30px;padding:20px;background-color:#fff}.info{padding:0 20px;position:absolute;bottom:40px;color:#fff;letter-spacing:0.05em;text-shadow:1px 1px 5px #555}.info__title{margin:0;font-size:20px}.info__date{text-align:right}.content__text{font-weight:500;letter-spacing:0.02em;line-height:1.8}.content__link a{margin:20px 0;display:flex;justify-content:center;align-items:center;border:1px solid #32282e;border-radius:3px;text-decoration:none;height:44px}.score{margin-top:20px;display:flex;justify-content:flex-end;overflow:hidden}.score__btn{float:left;display:flex;align-items:center;overflow:hidden}.score__btn button{float:left;display:flex;justify-content:center;align-items:center;width:36px;height:36px;border:1px solid #999;border-radius:50%;background-color:#fff;outline:none;transition:0.4s}.score__btn button:disabled{border:1px solid #fff;color:#fff}.score__btn__count{margin:0 10px;float:left}.score__btn--good:disabled{background-color:#00c853}.score__btn--bad:disabled{background-color:#ff8181}.recommend{margin:20px}@media screen and (min-width: 769px){.article{max-width:1000px;margin:auto;padding:0 20px}.article__head .info{width:100%}.article__head img{border-radius:20px}.article__main{border-left:1px solid #32282e;border-right:1px solid #32282e;border-bottom:1px solid #32282e}.article__link a{height:70px;font-size:1.2em}}\n", ""]);
+exports.push([module.i, "/* Global Remedies\n******************/\n\n/* Use border-box by default, globally */\n*,\n::before,\n::after {\n  box-sizing: border-box;\n}\n\n/*\n* Consistent line spacing...\n* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property\n*/\nhtml {\n  line-sizing: normal;\n}\n\n/* Remove the tiny space around the edge of the page */\nbody {\n  margin: 0;\n}\n\n/* Headings\n***********/\n\n/* Switch to rem units for headings */\n/* @@@ Initial values are based on existing browser defaults */\nh1 {\n  font-size: 2rem;\n}\nh2 {\n  font-size: 1.5rem;\n}\nh3 {\n  font-size: 1.17rem;\n}\nh4 {\n  font-size: 1rem;\n}\nh5 {\n  font-size: 0.83rem;\n}\nh6 {\n  font-size: 0.67rem;\n}\n\n/* Keep h1 margins consistent, even when nested */\n/* h1 {\n  margin: 0.67em 0;\n} */\np {\n  margin: 0;\n}\n/* Typography\n*************/\n\n/* Overflow by default is bad */\npre {\n  white-space: pre-wrap;\n}\n\n/*\n* 1. Solid, thin horizontal rules\n* 2. Remove Firefox `color: gray`\n* 3. Remove default `1px` height, and common `overflow: hidden`\n*/\nhr {\n  border-style: solid;\n  border-width: 1px 0 0;\n  color: inherit;\n  height: 0;\n  overflow: visible;\n}\n\n/* Embedded Elements\n********************/\n\n/*\n* 1. Block display is usually what we want\n* 2. Remove strange space-below when inline\n* 3. Responsive by default\n*/\nimg,\nsvg,\nvideo,\ncanvas,\naudio,\niframe,\nembed,\nobject {\n  display: block;\n  vertical-align: middle;\n  max-width: 100%;\n}\n\n/*\n* Maintain intrinsic aspect ratios when `max-width` is applied\n* (iframe, embed, and object have no intrinsic ratio, set height explicitly)\n*/\nimg,\nsvg,\nvideo,\ncanvas {\n  height: auto;\n}\n\n/*\n* There is no good reason elements default to 300px,\n* and audio files are unlikely to come with a width attribute\n*/\naudio {\n  width: 100%;\n}\n\n/* Old Browsers\n***************/\n\n/* Remove the border on images inside links in IE 10 and earlier */\nimg {\n  border-style: none;\n}\n\n/* Hide the overflow in IE 10 and earlier */\nsvg {\n  overflow: hidden;\n}\n\n/* Default block display on HTML5 elements */\narticle,\naside,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmain,\nnav,\nsection {\n  display: block;\n}\n\n/*\n* 1. Add the correct box sizing in IE 10\n* 2. Remove the padding in IE 10\n*/\n[type='checkbox'],\n[type='radio'] {\n  box-sizing: border-box;\n  padding: 0;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -804,52 +801,13 @@ module.exports = exported;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "/* Global Remedies\n******************/\n\n/* Use border-box by default, globally */\n*,\n::before,\n::after {\n  box-sizing: border-box;\n}\n\n/*\n* Consistent line spacing...\n* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property\n*/\nhtml {\n  line-sizing: normal;\n}\n\n/* Remove the tiny space around the edge of the page */\nbody {\n  margin: 0;\n}\n\n/* Headings\n***********/\n\n/* Switch to rem units for headings */\n/* @@@ Initial values are based on existing browser defaults */\nh1 {\n  font-size: 2rem;\n}\nh2 {\n  font-size: 1.5rem;\n}\nh3 {\n  font-size: 1.17rem;\n}\nh4 {\n  font-size: 1rem;\n}\nh5 {\n  font-size: 0.83rem;\n}\nh6 {\n  font-size: 0.67rem;\n}\n\n/* Keep h1 margins consistent, even when nested */\n/* h1 {\n  margin: 0.67em 0;\n} */\np {\n  margin: 0;\n}\n/* Typography\n*************/\n\n/* Overflow by default is bad */\npre {\n  white-space: pre-wrap;\n}\n\n/*\n* 1. Solid, thin horizontal rules\n* 2. Remove Firefox `color: gray`\n* 3. Remove default `1px` height, and common `overflow: hidden`\n*/\nhr {\n  border-style: solid;\n  border-width: 1px 0 0;\n  color: inherit;\n  height: 0;\n  overflow: visible;\n}\n\n/* Embedded Elements\n********************/\n\n/*\n* 1. Block display is usually what we want\n* 2. Remove strange space-below when inline\n* 3. Responsive by default\n*/\nimg,\nsvg,\nvideo,\ncanvas,\naudio,\niframe,\nembed,\nobject {\n  display: block;\n  vertical-align: middle;\n  max-width: 100%;\n}\n\n/*\n* Maintain intrinsic aspect ratios when `max-width` is applied\n* (iframe, embed, and object have no intrinsic ratio, set height explicitly)\n*/\nimg,\nsvg,\nvideo,\ncanvas {\n  height: auto;\n}\n\n/*\n* There is no good reason elements default to 300px,\n* and audio files are unlikely to come with a width attribute\n*/\naudio {\n  width: 100%;\n}\n\n/* Old Browsers\n***************/\n\n/* Remove the border on images inside links in IE 10 and earlier */\nimg {\n  border-style: none;\n}\n\n/* Hide the overflow in IE 10 and earlier */\nsvg {\n  overflow: hidden;\n}\n\n/* Default block display on HTML5 elements */\narticle,\naside,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmain,\nnav,\nsection {\n  display: block;\n}\n\n/*\n* 1. Add the correct box sizing in IE 10\n* 2. Remove the padding in IE 10\n*/\n[type='checkbox'],\n[type='radio'] {\n  box-sizing: border-box;\n  padding: 0;\n}\n", ""]);
-// Exports
-module.exports = exports;
-
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var api = __webpack_require__(2);
-            var content = __webpack_require__(12);
-
-            content = content.__esModule ? content.default : content;
-
-            if (typeof content === 'string') {
-              content = [[module.i, content, '']];
-            }
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = api(content, options);
-
-var exported = content.locals ? content.locals : {};
-
-
-
-module.exports = exported;
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
-exports = ___CSS_LOADER_API_IMPORT___(false);
-// Module
 exports.push([module.i, "/* Slider */\n.slick-slider {\n  position: relative;\n  display: block;\n  box-sizing: border-box;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -ms-touch-action: pan-y;\n  touch-action: pan-y;\n  -webkit-tap-highlight-color: transparent; }\n\n.slick-list {\n  position: relative;\n  overflow: hidden;\n  display: block;\n  margin: 0;\n  padding: 0; }\n  .slick-list:focus {\n    outline: none; }\n  .slick-list.dragging {\n    cursor: pointer;\n    cursor: hand; }\n\n.slick-slider .slick-track,\n.slick-slider .slick-list {\n  -webkit-transform: translate3d(0, 0, 0);\n  -moz-transform: translate3d(0, 0, 0);\n  -ms-transform: translate3d(0, 0, 0);\n  -o-transform: translate3d(0, 0, 0);\n  transform: translate3d(0, 0, 0); }\n\n.slick-track {\n  position: relative;\n  left: 0;\n  top: 0;\n  display: block;\n  margin-left: auto;\n  margin-right: auto; }\n  .slick-track:before, .slick-track:after {\n    content: \"\";\n    display: table; }\n  .slick-track:after {\n    clear: both; }\n  .slick-loading .slick-track {\n    visibility: hidden; }\n\n.slick-slide {\n  float: left;\n  height: 100%;\n  min-height: 1px;\n  display: none; }\n  [dir=\"rtl\"] .slick-slide {\n    float: right; }\n  .slick-slide img {\n    display: block; }\n  .slick-slide.slick-loading img {\n    display: none; }\n  .slick-slide.dragging img {\n    pointer-events: none; }\n  .slick-initialized .slick-slide {\n    display: block; }\n  .slick-loading .slick-slide {\n    visibility: hidden; }\n  .slick-vertical .slick-slide {\n    display: block;\n    height: auto;\n    border: 1px solid transparent; }\n\n.slick-arrow.slick-hidden {\n  display: none; }", ""]);
 // Exports
 module.exports = exports;
 
 
 /***/ }),
-/* 13 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -11454,7 +11412,7 @@ return jQuery;
 
 
 /***/ }),
-/* 14 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -11477,7 +11435,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 ;(function(factory) {
     'use strict';
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(13)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
