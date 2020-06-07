@@ -25,7 +25,7 @@ $('.menu-btn').on('click', function() {
 $('.popular-slider').slick({
   dots: false,
   arrows: false,
-  autoplay: false,
+  autoplay: true,
   centerMode: true,
   speed: 500,
   slidesToShow: 3,

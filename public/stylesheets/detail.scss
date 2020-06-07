@@ -114,7 +114,7 @@
 @media screen and (min-width: 769px) {
   .article {
     max-width: 1000px;
-    margin: auto;
+    margin: 20px auto 0;
     padding: 0 20px;
     &__head {
       .info {
@@ -123,11 +123,6 @@
       img {
         border-radius: 20px;
       }
-    }
-    &__main {
-      border-left: 1px solid #32282e;
-      border-right: 1px solid #32282e;
-      border-bottom: 1px solid #32282e;
     }
     &__link {
       a {

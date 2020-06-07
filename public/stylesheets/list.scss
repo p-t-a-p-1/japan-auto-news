@@ -2,7 +2,7 @@
 .popular {
   margin-top: 10px;
   &__title {
-    margin-bottom: 5px;
+    margin: 0 20px 5px;
   }
 }
 
@@ -108,6 +108,8 @@
     padding: 0 20px;
     &__title {
       font-size: 2em;
+      margin-right: 0;
+      margin-left: 0;
     }
   }
   .latest {
