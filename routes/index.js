@@ -35,9 +35,9 @@ router.get('/', function (req, res, next) {
         title: 'ニュース一覧｜国内最新ニュース', // ページtitle
         description:
           'ニュースまとめサイト「JAPAN-TODAY-NEWS」。一般、エンタメ、健康、スポーツに関する最新のニュースを1日1回追加します。', // ページdescription
-        currentUrl: req.protocol + '://' + req.headers.host + req.originalUrl, // 現在のURL
+        currentUrl: 'https://' + req.headers.host + req.originalUrl, // 現在のURL
         ogType: 'website', // ogの定義で使用
-        ogImageUrl: req.protocol + '://' + req.headers.host + '/ogp.png', // og画像
+        ogImageUrl: 'https://' + req.headers.host + '/ogp.png', // og画像
         populatePosts: populatePosts, // 人気記事情報
         posts: posts, // 新着記事情報
       })

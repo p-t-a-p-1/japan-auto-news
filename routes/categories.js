@@ -68,9 +68,9 @@ router.get('/:categorySlug', (req, res, next) => {
           'ニュースまとめサイト「JAPAN-TODAY-NEWS」。' +
           storedCategory.name +
           'に関する最新のニュースです。', // ページdescription
-        currentUrl: req.protocol + '://' + req.headers.host + req.originalUrl, // 現在のURL
+        currentUrl: 'https://' + req.headers.host + req.originalUrl, // 現在のURL
         ogType: 'article', // og定義で使用
-        ogImageUrl: req.protocol + '://' + req.headers.host + '/ogp.png', // og画像
+        ogImageUrl: 'https://' + req.headers.host + '/ogp.png', // og画像
         populatePosts: populatePosts, // 人気記事情報
         posts: posts, // 新着記事情報
       })

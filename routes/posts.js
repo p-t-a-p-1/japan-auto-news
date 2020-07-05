@@ -70,7 +70,7 @@ router.get('/:postId', csrfProtection, (req, res, next) => {
       res.render('post', {
         title: storedPost.title + '｜国内最新ニュース',
         description: storedPost.content.slice(0, 90),
-        currentUrl: req.protocol + '://' + req.headers.host + req.originalUrl,
+        currentUrl: 'https://' + req.headers.host + req.originalUrl,
         ogType: 'article',
         ogImageUrl: storedPost.thumbImg,
         post: storedPost,
