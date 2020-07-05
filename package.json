@@ -25,7 +25,7 @@
     "pg-hstore": "2.3.2",
     "pug": "2.0.0-beta11",
     "sass-loader": "7.3.1",
-    "sequelize": "4.33.4",
+    "sequelize": "5.15.1",
     "serve-favicon": "^2.5.0",
     "slick-carousel": "^1.8.1",
     "style-loader": "^1.1.3",
