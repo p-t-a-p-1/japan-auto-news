@@ -3,7 +3,7 @@ extends layout
 block content
   article.article
     div.article__head
-      if post.thumbImg !== null
+      if post.thumbImg !== null && post.thumbImg.match( /^https?:\/\// )
         img(src=post.thumbImg width="100%" alt=post.title)
       else
         img(src='/images/noimage.png' width="100%" alt=post.title)
@@ -44,7 +44,7 @@ block content
                   h3.media__title #{recomPost.title}
                   p.media__description #{recomPost.content}
                 div.media__img
-                  if recomPost.thumbImg !== null
+                  if recomPost.thumbImg !== null && recomPost.thumbImg.match( /^https?:\/\// )
                     img(src=recomPost.thumbImg width="100%" alt=recomPost.title)
                   else
                     img(src='/images/noimage.png' width="100%" alt=recomPost.title)

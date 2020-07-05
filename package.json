@@ -12,6 +12,7 @@
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "express-ipfilter": "^1.1.1",
+    "express-sitemap": "^1.8.0",
     "file-loader": "^6.0.0",
     "helmet": "3.8.2",
     "http-errors": "~1.6.2",
