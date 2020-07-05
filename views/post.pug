@@ -3,7 +3,8 @@ extends layout
 block content
   article.article
     div.article__head
-      if post.thumbImg !== null && post.thumbImg.match( /^https?:\/\// )
+      - var isHttpsImg = post.thumbImg.match( /^https?:\/\// )
+      if isHttpsImg
         img(src=post.thumbImg width="100%" alt=post.title)
       else
         img(src='/images/noimage.png' width="100%" alt=post.title)
@@ -38,13 +39,14 @@ block content
         ul.reccomend__list
           each recomPost in recomPosts
             - var recomPostLink = '/post/' + recomPost.id
+            - var isHttpsImg = recomPost.thumbImg.match( /^https?:\/\// )
             li.reccommend__item.media
               a(href=recomPostLink).media__link
                 div.media__info
                   h3.media__title #{recomPost.title}
                   p.media__description #{recomPost.content}
                 div.media__img
-                  if recomPost.thumbImg !== null && recomPost.thumbImg.match( /^https?:\/\// )
+                  if isHttpsImg
                     img(src=recomPost.thumbImg width="100%" alt=recomPost.title)
                   else
                     img(src='/images/noimage.png' width="100%" alt=recomPost.title)

@@ -9,10 +9,11 @@ block content
       div.popular-slider(style="display:none;")
         each post in populatePosts
           - var postLink = '/post/' + post.id
+          - var isHttpsImg = post.thumbImg.match( /^https?:\/\// )
           div.popular-slider__item
             a(href=postLink).slider-link
               p.slider-link__title #{post.title}
-              if post.thumbImg !== null && post.thumbImg.match( /^https?:\/\// )
+              if isHttpsImg
                 img(src=post.thumbImg width="100%" alt=post.title).slider-link__img
               else
                 img(src='/images/noimage.png' width="100%" alt=post.title).slider-link__img
@@ -25,13 +26,14 @@ block content
       ul.latest-list
         each post in posts
           - var postLink = '/post/' + post.id
+          - var isHttpsImg = post.thumbImg.match( /^https?:\/\// )
           li.latest-list__item.media
             a(href=postLink).media__link
               div.media__info
                 h3.media__title #{post.title}
                 p.media__description #{post.content}
               div.media__img
-                if post.thumbImg !== null && post.thumbImg.match( /^https?:\/\// )
+                if isHttpsImg
                   img(src=post.thumbImg width="100%" alt=post.title)
                 else
                   img(src='/images/noimage.png' width="100%" alt=post.title)
