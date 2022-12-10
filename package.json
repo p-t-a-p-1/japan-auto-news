@@ -10,7 +10,7 @@
     "css-loader": "^3.5.2",
     "csurf": "1.8.3",
     "debug": "~2.6.9",
-    "express": "~4.16.0",
+    "express": "~4.17.3",
     "express-ipfilter": "^1.1.1",
     "express-sitemap": "^1.8.0",
     "file-loader": "^6.0.0",
